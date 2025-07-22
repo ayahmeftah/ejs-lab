@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <h1>Full Menu</h1>
+
+  <h2>Mains</h2>
+  <% menu.forEach(meal => { %>
+    <% if (meal.category === 'mains') { %>
+      <p><strong><%= meal.name %>
+    <% if(meal.rating === 5){%>⭐<%}%>
+    </strong></p>
+      <p>Price: $<%= meal.price %></p>
+      <p>Rating: <%= meal.rating %>/5</p>
+      <p><%= meal.details %></p>
+      <hr>
+    <% } %>
+  <% }); %>
+
+  <h2>Desserts</h2>
+  <% menu.forEach(meal => { %>
+    <% if (meal.category === 'desserts') { %>
+      <p><strong><%= meal.name %>
+    <% if(meal.rating === 5){%>⭐<%}%>
+    </strong></p>
+      <p>Price: $<%= meal.price %></p>
+      <p>Rating: <%= meal.rating %>/5</p>
+      <p><%= meal.details %></p>
+      <hr>
+    <% } %>
+  <% }); %>
+
+  <h2>Sides</h2>
+  <% menu.forEach(meal => { %>
+    <% if (meal.category === 'sides') { %>
+      <p><strong><%= meal.name %>
+    <% if(meal.rating === 5){%>⭐<%}%>
+    </strong></p>
+      <p>Price: $<%= meal.price %></p>
+      <p>Rating: <%= meal.rating %>/5</p>
+      <p><%= meal.details %></p>
+      <hr>
+    <% } %>
+  <% }); %>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= category %></title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+     <h1><%= category %></h1>
+    <% menuItems.forEach((meal) => { %>
+    <p><strong><%= meal.name %>
+    <% if(meal.rating === 5){%>⭐<%}%>
+    </strong></p>
+    <p>Price: $<%= meal.price.toFixed(2) %></p>
+    <p>Rating: <%= meal.rating %>/5</p>
+    <p><%= meal.details %></p>
+    <hr>
+  <% }); %>
+</body>
+</html>
